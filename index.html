@@ -1,1 +1,178 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Antonioilking | Staff Experience</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --bg-color: #0d0d16;
+            --card-bg: #151522;
+            --border-color: #252538;
+            --accent-purple: #7c5cfc;
+            --discord-blue: #5865F2;
+            --telegram-blue: #0088cc;
+        }
 
+        body {
+            background-color: var(--bg-color);
+            color: white;
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 60px 20px;
+        }
+
+        /* Profilo */
+        .profile-header { text-align: center; margin-bottom: 40px; }
+        .avatar { 
+            width: 110px; height: 110px; 
+            border-radius: 50%; 
+            border: 3px solid var(--accent-purple); 
+            margin-bottom: 15px;
+            object-fit: cover;
+            box-shadow: 0 0 20px rgba(124, 92, 252, 0.2);
+        }
+        .username { font-size: 2.2rem; font-weight: 700; margin: 0; letter-spacing: -1px; }
+        .subtitle { color: #8a8a9d; font-size: 0.95rem; margin-top: 5px; }
+
+        /* Social Bottoni */
+        .socials { display: flex; gap: 12px; margin-top: 25px; }
+        .btn {
+            text-decoration: none;
+            color: white;
+            padding: 10px 18px;
+            border-radius: 8px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.3s ease;
+        }
+        .btn-discord { background-color: var(--discord-blue); }
+        .btn-telegram { background-color: var(--telegram-blue); }
+        .btn:hover { transform: translateY(-3px); filter: brightness(1.1); }
+
+        /* Griglia Esperienze */
+        .section-title { 
+            font-size: 1rem; 
+            font-weight: 700; 
+            color: #5a5a75; 
+            text-transform: uppercase; 
+            letter-spacing: 2px;
+            margin: 50px 0 25px 0;
+        }
+        
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 16px;
+            width: 100%;
+            max-width: 1000px;
+        }
+
+        /* Card */
+        .card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 18px;
+            display: flex;
+            align-items: center;
+            position: relative;
+            transition: 0.3s;
+        }
+        .card:hover { border-color: var(--accent-purple); background: #1a1a2e; }
+
+        .icon-box {
+            width: 48px; height: 48px;
+            background-color: #2b2b45;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 1.3rem;
+            margin-right: 15px;
+            color: #fff;
+        }
+
+        .info h3 { margin: 0; font-size: 1.05rem; }
+        .info p { margin: 2px 0; font-size: 0.75rem; color: #5a5a75; }
+
+        /* Tags Ruoli */
+        .tag {
+            display: inline-block;
+            margin-top: 8px;
+            padding: 3px 10px;
+            border-radius: 4px;
+            font-size: 0.65rem;
+            font-weight: 800;
+            text-transform: uppercase;
+        }
+        .admin { background-color: #ff4757; }
+        .mod { background-color: #1e90ff; }
+        .helper { background-color: #2ed573; }
+
+        .status { position: absolute; top: 18px; right: 18px; font-size: 0.65rem; color: #3d3d52; }
+    </style>
+</head>
+<body>
+
+    <div class="profile-header">
+        <img src="https://via.placeholder.com/110" class="avatar" alt="Avatar">
+        <h1 class="username">Antonioilking</h1>
+        <p class="subtitle">Minecraft Server Staffer • Management</p>
+
+        <div class="socials">
+            <a href="#" class="btn btn-discord">
+                <i class="fab fa-discord"></i> Discord: antonioilkingog
+            </a>
+            <a href="#" class="btn btn-telegram">
+                <i class="fab fa-telegram"></i> Telegram: @antonioilking
+            </a>
+        </div>
+    </div>
+
+    <h2 class="section-title">Staff Experience</h2>
+
+    <div class="grid">
+        <div class="card">
+            <div class="icon-box" style="background-color: #3f3fef;">C</div>
+            <div class="info">
+                <h3>CoralMC</h3>
+                <p>play.coralmc.it</p>
+                <span class="tag mod">Moderator</span>
+            </div>
+            <span class="status">• Offline</span>
+        </div>
+
+        <div class="card">
+            <div class="icon-box" style="background-color: #8e44ad;">B</div>
+            <div class="info">
+                <h3>BigMC</h3>
+                <p>mc.bigmc.it</p>
+                <span class="tag admin">Administrator</span>
+            </div>
+            <span class="status">• Offline</span>
+        </div>
+
+        <div class="card">
+            <div class="icon-box" style="background-color: #27ae60;">S</div>
+            <div class="info">
+                <h3>SolariumMC</h3>
+                <p>—</p>
+                <span class="tag helper">Helper</span>
+            </div>
+            <span class="status">• Offline</span>
+        </div>
+    </div>
+
+</body>
+</html>

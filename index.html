@@ -15,6 +15,7 @@
             --accent-purple: #7c5cfc;
             --discord-blue: #5865F2;
             --telegram-blue: #0088cc;
+            --status-red: #ff4757;
         }
 
         body {
@@ -31,24 +32,24 @@
         /* Profilo */
         .profile-header { text-align: center; margin-bottom: 40px; }
         .avatar { 
-            width: 120px; height: 120px; 
+            width: 150px; height: 150px; /* Avatar più grande */
             border-radius: 50%; 
-            border: 3px solid var(--accent-purple); 
-            margin-bottom: 15px;
+            border: 4px solid var(--accent-purple); 
+            margin-bottom: 20px;
             object-fit: cover;
-            box-shadow: 0 0 25px rgba(124, 92, 252, 0.4);
+            box-shadow: 0 0 35px rgba(124, 92, 252, 0.5);
         }
-        .username { font-size: 2.2rem; font-weight: 700; margin: 0; letter-spacing: -1px; }
-        .subtitle { color: #8a8a9d; font-size: 0.95rem; margin-top: 5px; }
+        .username { font-size: 2.5rem; font-weight: 700; margin: 0; letter-spacing: -1px; }
+        .subtitle { color: #8a8a9d; font-size: 1rem; margin-top: 5px; }
 
         /* Social Bottoni */
         .socials { display: flex; gap: 12px; margin-top: 25px; justify-content: center; }
         .btn {
             text-decoration: none;
             color: white;
-            padding: 10px 18px;
+            padding: 12px 20px;
             border-radius: 8px;
-            font-size: 0.85rem;
+            font-size: 0.9rem;
             font-weight: 600;
             display: flex;
             align-items: center;
@@ -57,7 +58,7 @@
         }
         .btn-discord { background-color: var(--discord-blue); }
         .btn-telegram { background-color: var(--telegram-blue); }
-        .btn:hover { transform: translateY(-3px); filter: brightness(1.1); box-shadow: 0 5px 15px rgba(0,0,0,0.3); }
+        .btn:hover { transform: translateY(-3px); filter: brightness(1.1); box-shadow: 0 5px 15px rgba(0,0,0,0.4); }
 
         /* Griglia Esperienze */
         .section-title { 
@@ -71,10 +72,10 @@
         
         .grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
             gap: 16px;
             width: 100%;
-            max-width: 1000px;
+            max-width: 1050px;
         }
 
         /* Card */
@@ -88,39 +89,47 @@
             position: relative;
             transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
-        .card:hover { border-color: var(--accent-purple); transform: scale(1.02); background: #1a1a2e; }
+        .card:hover { border-color: var(--accent-purple); transform: scale(1.03); background: #1a1a2e; }
 
         .icon-box {
-            width: 48px; height: 48px;
+            width: 54px; height: 54px;
             background-color: #2b2b45;
             border-radius: 10px;
             display: flex;
             align-items: center;
             justify-content: center;
             font-weight: 700;
-            font-size: 1.3rem;
+            font-size: 1.5rem;
             margin-right: 15px;
             color: #fff;
         }
 
-        .info h3 { margin: 0; font-size: 1.05rem; }
-        .info p { margin: 2px 0; font-size: 0.75rem; color: #5a5a75; }
+        .info h3 { margin: 0; font-size: 1.1rem; }
+        .info p { margin: 2px 0; font-size: 0.8rem; color: #5a5a75; }
 
         /* Tags Ruoli */
         .tag {
             display: inline-block;
             margin-top: 8px;
-            padding: 3px 10px;
-            border-radius: 4px;
-            font-size: 0.65rem;
+            padding: 4px 12px;
+            border-radius: 6px;
+            font-size: 0.7rem;
             font-weight: 800;
             text-transform: uppercase;
         }
         .admin { background-color: #ff4757; color: white; }
         .mod { background-color: #1e90ff; color: white; }
-        .helper { background-color: #2ed573; color: white; }
+        .helper-plus { background-color: #2ed573; color: white; } /* Verde per Helper+ */
+        .helper { background-color: #747d8c; color: white; }
 
-        .status { position: absolute; top: 18px; right: 18px; font-size: 0.65rem; color: #3d3d52; }
+        .status { 
+            position: absolute; 
+            top: 18px; 
+            right: 18px; 
+            font-size: 0.7rem; 
+            color: var(--status-red); /* Rosso per Passato */
+            font-weight: 600;
+        }
     </style>
 </head>
 <body>
@@ -131,11 +140,11 @@
         <p class="subtitle">Minecraft Staffer • Esperienze & Management</p>
 
         <div class="socials">
-            <a href="#" class="btn btn-discord">
+            <a href="https://discord.com" class="btn btn-discord">
                 <i class="fab fa-discord"></i> Discord: antonioilkingog
             </a>
-            <a href="#" class="btn btn-telegram">
-                <i class="fab fa-telegram"></i> Telegram: @antonioilking
+            <a href="https://github.com/antonioilking/Staff-Experience/blob/main/index.html" class="btn btn-telegram">
+                <i class="fas fa-code"></i> Sorgente Codice
             </a>
         </div>
     </div>
@@ -144,11 +153,11 @@
 
     <div class="grid">
         <div class="card">
-            <div class="icon-box" style="background-color: #3f3fef;">C</div>
+            <div class="icon-box" style="background-color: #e67e22;">N</div>
             <div class="info">
-                <h3>CoralMC</h3>
-                <p>play.coralmc.it</p>
-                <span class="tag mod">Moderatore</span>
+                <h3>Nexuscraft (MetaMC)</h3>
+                <p>play.nexuscraft.it</p>
+                <span class="tag helper-plus">Helper+</span>
             </div>
             <span class="status">• Passato</span>
         </div>

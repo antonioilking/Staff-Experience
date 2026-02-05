@@ -31,18 +31,18 @@
         /* Profilo */
         .profile-header { text-align: center; margin-bottom: 40px; }
         .avatar { 
-            width: 110px; height: 110px; 
+            width: 120px; height: 120px; 
             border-radius: 50%; 
             border: 3px solid var(--accent-purple); 
             margin-bottom: 15px;
             object-fit: cover;
-            box-shadow: 0 0 20px rgba(124, 92, 252, 0.2);
+            box-shadow: 0 0 25px rgba(124, 92, 252, 0.3);
         }
         .username { font-size: 2.2rem; font-weight: 700; margin: 0; letter-spacing: -1px; }
         .subtitle { color: #8a8a9d; font-size: 0.95rem; margin-top: 5px; }
 
         /* Social Bottoni */
-        .socials { display: flex; gap: 12px; margin-top: 25px; }
+        .socials { display: flex; gap: 12px; margin-top: 25px; justify-content: center; }
         .btn {
             text-decoration: none;
             color: white;
@@ -61,7 +61,7 @@
 
         /* Griglia Esperienze */
         .section-title { 
-            font-size: 1rem; 
+            font-size: 0.9rem; 
             font-weight: 700; 
             color: #5a5a75; 
             text-transform: uppercase; 
@@ -77,12 +77,12 @@
             max-width: 1000px;
         }
 
-        /* Card */
+        /* Card Card */
         .card {
             background-color: var(--card-bg);
             border: 1px solid var(--border-color);
             border-radius: 12px;
-            padding: 18px;
+            padding: 20px;
             display: flex;
             align-items: center;
             position: relative;
@@ -116,9 +116,9 @@
             font-weight: 800;
             text-transform: uppercase;
         }
-        .admin { background-color: #ff4757; }
-        .mod { background-color: #1e90ff; }
-        .helper { background-color: #2ed573; }
+        .admin { background-color: #ff4757; color: white; }
+        .mod { background-color: #1e90ff; color: white; }
+        .helper { background-color: #2ed573; color: white; }
 
         .status { position: absolute; top: 18px; right: 18px; font-size: 0.65rem; color: #3d3d52; }
     </style>
@@ -126,21 +126,21 @@
 <body>
 
     <div class="profile-header">
-        <img src="https://via.placeholder.com/110" class="avatar" alt="Avatar">
+        <img src="https://storage.googleapis.com/image_generation_content/0.png" class="avatar" alt="Avatar">
         <h1 class="username">Antonioilking</h1>
-        <p class="subtitle">Minecraft Server Staffer • Management</p>
+        <p class="subtitle">Minecraft Staffer • Esperienze & Management</p>
 
         <div class="socials">
             <a href="#" class="btn btn-discord">
-                <i class="fab fa-discord"></i> Discord: antonioilkingog
+                <i class="fab fa-discord"></i> Discord: antonio_king
             </a>
             <a href="#" class="btn btn-telegram">
-                <i class="fab fa-telegram"></i> Telegram: @antonioilking
+                <i class="fab fa-telegram"></i> Telegram: @antonio
             </a>
         </div>
     </div>
 
-    <h2 class="section-title">Staff Experience</h2>
+    <h2 class="section-title">Esperienze Staff</h2>
 
     <div class="grid">
         <div class="card">
@@ -148,7 +148,7 @@
             <div class="info">
                 <h3>CoralMC</h3>
                 <p>play.coralmc.it</p>
-                <span class="tag mod">Moderator</span>
+                <span class="tag mod">Moderatore</span>
             </div>
             <span class="status">• Offline</span>
         </div>
@@ -158,7 +158,7 @@
             <div class="info">
                 <h3>BigMC</h3>
                 <p>mc.bigmc.it</p>
-                <span class="tag admin">Administrator</span>
+                <span class="tag admin">Amministratore</span>
             </div>
             <span class="status">• Offline</span>
         </div>

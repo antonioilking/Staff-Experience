@@ -29,7 +29,6 @@
             padding: 60px 20px;
         }
 
-        /* Profilo */
         .profile-header { text-align: center; margin-bottom: 40px; }
         .avatar { 
             width: 160px; height: 160px; 
@@ -42,7 +41,6 @@
         .username { font-size: 2.5rem; font-weight: 700; margin: 0; letter-spacing: -1px; }
         .subtitle { color: #8a8a9d; font-size: 1rem; margin-top: 5px; }
 
-        /* Social Bottoni */
         .socials { display: flex; gap: 12px; margin-top: 25px; justify-content: center; }
         .btn {
             text-decoration: none;
@@ -60,7 +58,6 @@
         .btn-telegram { background-color: var(--telegram-blue); }
         .btn:hover { transform: translateY(-3px); filter: brightness(1.1); box-shadow: 0 5px 15px rgba(0,0,0,0.4); }
 
-        /* Griglia */
         .section-title { 
             font-size: 0.9rem; 
             font-weight: 700; 
@@ -78,7 +75,6 @@
             max-width: 1100px;
         }
 
-        /* Card */
         .card {
             background-color: var(--card-bg);
             border: 1px solid var(--border-color);
@@ -105,10 +101,9 @@
         }
 
         .info { flex-grow: 1; }
-        .info h3 { margin: 0; font-size: 1.1rem; display: flex; justify-content: space-between; align-items: center; }
+        .info h3 { margin: 0; font-size: 1.1rem; display: flex; align-items: center; justify-content: space-between; }
         .info p { margin: 2px 0; font-size: 0.8rem; color: #5a5a75; }
 
-        /* Tags Ruoli */
         .tag {
             display: inline-block;
             margin-top: 10px;
@@ -122,12 +117,11 @@
         .helper-plus { background-color: #2ed573; color: white; }
         .helper { background-color: #747d8c; color: white; }
 
-        /* Status con Spazio */
         .status { 
             font-size: 0.7rem; 
             color: var(--status-red);
             font-weight: 700;
-            margin-left: 15px; /* Crea lo spazio dal nome del server */
+            margin-left: 20px;
             white-space: nowrap;
         }
     </style>
@@ -135,7 +129,7 @@
 <body>
 
     <div class="profile-header">
-        <img src="e797f687e8d931d0dc847a1433b5b399.jpg" class="avatar" alt="Avatar">
+        <img src="avatar.png" class="avatar" alt="Avatar">
         <h1 class="username">Antonioilking</h1>
         <p class="subtitle">Minecraft Staffer • Esperienze & Management</p>
 

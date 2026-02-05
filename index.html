@@ -32,7 +32,7 @@
         /* Profilo */
         .profile-header { text-align: center; margin-bottom: 40px; }
         .avatar { 
-            width: 160px; height: 160px; /* Avatar più grande */
+            width: 160px; height: 160px; 
             border-radius: 50%; 
             border: 4px solid var(--accent-purple); 
             margin-bottom: 20px;
@@ -60,7 +60,7 @@
         .btn-telegram { background-color: var(--telegram-blue); }
         .btn:hover { transform: translateY(-3px); filter: brightness(1.1); box-shadow: 0 5px 15px rgba(0,0,0,0.4); }
 
-        /* Griglia Esperienze */
+        /* Griglia */
         .section-title { 
             font-size: 0.9rem; 
             font-weight: 700; 
@@ -73,9 +73,9 @@
         .grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 16px;
+            gap: 20px;
             width: 100%;
-            max-width: 1050px;
+            max-width: 1100px;
         }
 
         /* Card */
@@ -83,7 +83,7 @@
             background-color: var(--card-bg);
             border: 1px solid var(--border-color);
             border-radius: 12px;
-            padding: 20px;
+            padding: 25px 20px;
             display: flex;
             align-items: center;
             position: relative;
@@ -104,13 +104,14 @@
             color: #fff;
         }
 
-        .info h3 { margin: 0; font-size: 1.1rem; }
+        .info { flex-grow: 1; }
+        .info h3 { margin: 0; font-size: 1.1rem; display: flex; justify-content: space-between; align-items: center; }
         .info p { margin: 2px 0; font-size: 0.8rem; color: #5a5a75; }
 
         /* Tags Ruoli */
         .tag {
             display: inline-block;
-            margin-top: 8px;
+            margin-top: 10px;
             padding: 4px 12px;
             border-radius: 6px;
             font-size: 0.7rem;
@@ -118,16 +119,16 @@
             text-transform: uppercase;
         }
         .admin { background-color: #ff4757; color: white; }
-        .helper-plus { background-color: #2ed573; color: white; } /* Verde per Helper+ */
+        .helper-plus { background-color: #2ed573; color: white; }
         .helper { background-color: #747d8c; color: white; }
 
+        /* Status con Spazio */
         .status { 
-            position: absolute; 
-            top: 18px; 
-            right: 18px; 
             font-size: 0.7rem; 
-            color: var(--status-red); /* Rosso per Passato */
+            color: var(--status-red);
             font-weight: 700;
+            margin-left: 15px; /* Crea lo spazio dal nome del server */
+            white-space: nowrap;
         }
     </style>
 </head>
@@ -142,8 +143,8 @@
             <a href="https://discord.com" class="btn btn-discord">
                 <i class="fab fa-discord"></i> Discord: antonioilkingog
             </a>
-            <a href="https://github.com/antonioilking/Staff-Experience/blob/main/index.html" class="btn btn-telegram">
-                <i class="fas fa-code"></i> Sorgente Codice
+            <a href="https://t.me/antonioilking" class="btn btn-telegram">
+                <i class="fab fa-telegram"></i> Telegram: @antonioilking
             </a>
         </div>
     </div>
@@ -154,31 +155,28 @@
         <div class="card">
             <div class="icon-box" style="background-color: #e67e22;">N</div>
             <div class="info">
-                <h3>Nexuscraft (MetaMC)</h3>
-                <p>play.nexuscraft.it</p>
+                <h3>Nexuscraft (MetaMC) <span class="status">• Passato</span></h3>
+                <p>metamc.it</p>
                 <span class="tag helper-plus">Helper+</span>
             </div>
-            <span class="status">• Passato</span>
         </div>
 
         <div class="card">
             <div class="icon-box" style="background-color: #8e44ad;">B</div>
             <div class="info">
-                <h3>BigMC</h3>
+                <h3>BigMC <span class="status">• Passato</span></h3>
                 <p>mc.bigmc.it</p>
                 <span class="tag admin">Amministratore</span>
             </div>
-            <span class="status">• Passato</span>
         </div>
 
         <div class="card">
             <div class="icon-box" style="background-color: #27ae60;">S</div>
             <div class="info">
-                <h3>SolariumMC</h3>
+                <h3>SolariumMC <span class="status">• Passato</span></h3>
                 <p>—</p>
                 <span class="tag helper">Helper</span>
             </div>
-            <span class="status">• Passato</span>
         </div>
     </div>
 

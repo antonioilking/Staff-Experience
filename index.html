@@ -36,7 +36,7 @@
             border: 3px solid var(--accent-purple); 
             margin-bottom: 15px;
             object-fit: cover;
-            box-shadow: 0 0 25px rgba(124, 92, 252, 0.3);
+            box-shadow: 0 0 25px rgba(124, 92, 252, 0.4);
         }
         .username { font-size: 2.2rem; font-weight: 700; margin: 0; letter-spacing: -1px; }
         .subtitle { color: #8a8a9d; font-size: 0.95rem; margin-top: 5px; }
@@ -57,7 +57,7 @@
         }
         .btn-discord { background-color: var(--discord-blue); }
         .btn-telegram { background-color: var(--telegram-blue); }
-        .btn:hover { transform: translateY(-3px); filter: brightness(1.1); }
+        .btn:hover { transform: translateY(-3px); filter: brightness(1.1); box-shadow: 0 5px 15px rgba(0,0,0,0.3); }
 
         /* Griglia Esperienze */
         .section-title { 
@@ -77,7 +77,7 @@
             max-width: 1000px;
         }
 
-        /* Card Card */
+        /* Card */
         .card {
             background-color: var(--card-bg);
             border: 1px solid var(--border-color);
@@ -86,9 +86,9 @@
             display: flex;
             align-items: center;
             position: relative;
-            transition: 0.3s;
+            transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
-        .card:hover { border-color: var(--accent-purple); background: #1a1a2e; }
+        .card:hover { border-color: var(--accent-purple); transform: scale(1.02); background: #1a1a2e; }
 
         .icon-box {
             width: 48px; height: 48px;
@@ -126,21 +126,21 @@
 <body>
 
     <div class="profile-header">
-        <img src="https://storage.googleapis.com/image_generation_content/0.png" class="avatar" alt="Avatar">
+        <img src="avatar.png" class="avatar" alt="Avatar">
         <h1 class="username">Antonioilking</h1>
-        <p class="subtitle">Minecraft Staffer • Esperienze & Management</p>
+        <p class="subtitle">Minecraft Staffer • Portfolio & Experience</p>
 
         <div class="socials">
-            <a href="#" class="btn btn-discord">
-                <i class="fab fa-discord"></i> Discord: antonio_king
+            <a href="https://discord.com" class="btn btn-discord">
+                <i class="fab fa-discord"></i> Discord: antonioilkinog
             </a>
-            <a href="#" class="btn btn-telegram">
-                <i class="fab fa-telegram"></i> Telegram: @antonio
+            <a href="https://t.me" class="btn btn-telegram">
+                <i class="fab fa-telegram"></i> Telegram: @antonioilking
             </a>
         </div>
     </div>
 
-    <h2 class="section-title">Esperienze Staff</h2>
+    <h2 class="section-title">Le Mie Esperienze</h2>
 
     <div class="grid">
         <div class="card">
@@ -150,7 +150,7 @@
                 <p>play.coralmc.it</p>
                 <span class="tag mod">Moderatore</span>
             </div>
-            <span class="status">• Offline</span>
+            <span class="status">• Passato</span>
         </div>
 
         <div class="card">
@@ -160,7 +160,7 @@
                 <p>mc.bigmc.it</p>
                 <span class="tag admin">Amministratore</span>
             </div>
-            <span class="status">• Offline</span>
+            <span class="status">• Passato</span>
         </div>
 
         <div class="card">
@@ -170,7 +170,7 @@
                 <p>—</p>
                 <span class="tag helper">Helper</span>
             </div>
-            <span class="status">• Offline</span>
+            <span class="status">• Passato</span>
         </div>
     </div>
 

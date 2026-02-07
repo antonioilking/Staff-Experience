@@ -3,42 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Antonioilking | Staff Experience</title>
+    <title>Antonioilking | Minecraft Experience</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
     
     <style>
         :root {
-            --bg-color: #0d0d16;
-            --card-bg: rgba(21, 21, 34, 0.8);
-            --border-color: #252538;
+            --bg-color: #0b0b14;
+            --card-bg: #12121f;
+            --border-color: #1e1e2e;
             --accent-purple: #7c5cfc;
-            --discord-blue: #5865F2;
-            --telegram-blue: #0088cc;
-            --status-red: #ff4757;
-            --status-gray: #5a5a75;
-            --status-green: #2ed573;
-            --mod-blue: #00a8ff;
-            --srmod-blue: #0984e3;
-            --owner-red: #ff4757;
-            --collaboratore-brown: #8B4513;
-            --footer-text: #4a4a61;
+            --status-offline: #5a5a75;
+            --status-online: #2ed573;
         }
 
         body {
             background-color: var(--bg-color);
-            background: radial-gradient(circle at center, #1b1b2f 0%, #0d0d16 100%);
+            background: radial-gradient(circle at center, #16162d 0%, #0b0b14 100%);
             color: white;
             font-family: 'Inter', sans-serif;
             margin: 0;
             display: flex;
             flex-direction: column;
             align-items: center;
-            padding: 60px 20px 20px 20px;
+            padding: 40px 20px;
             min-height: 100vh;
             overflow-x: hidden;
-            position: relative;
-            cursor: default;
         }
 
         /* SFONDO ANIMATO */
@@ -46,139 +36,156 @@
             position: fixed;
             top: 0; left: 0; width: 100%; height: 100%;
             z-index: -1;
-            overflow: hidden;
             pointer-events: none;
         }
-
         .particle {
             position: absolute;
-            background: rgba(124, 92, 252, 0.3);
+            background: rgba(124, 92, 252, 0.2);
             border-radius: 50%;
-            filter: blur(2px);
-            animation: float 20s infinite linear;
+            animation: float 15s infinite linear;
         }
-
         @keyframes float {
-            0% { transform: translateY(0) translateX(0); opacity: 0; }
-            50% { opacity: 0.6; }
-            100% { transform: translateY(-100vh) translateX(50px); opacity: 0; }
+            0% { transform: translateY(100vh) scale(0); opacity: 0; }
+            50% { opacity: 0.5; }
+            100% { transform: translateY(-10vh) scale(1); opacity: 0; }
         }
 
-        /* SCIA DEL CURSORE */
-        .trail {
-            position: fixed;
-            width: 8px;
-            height: 8px;
-            background: var(--accent-purple);
-            border-radius: 50%;
-            pointer-events: none;
-            z-index: 9999;
-            transform: translate(-50%, -50%);
-            transition: transform 0.1s ease-out, opacity 0.8s ease-out, width 0.8s ease-out, height 0.8s ease-out;
-            box-shadow: 0 0 10px var(--accent-purple);
-        }
-
-        /* Contenuti */
-        .profile-header { text-align: center; margin-bottom: 40px; position: relative; }
+        /* HEADER */
+        .profile-header { text-align: center; margin-bottom: 50px; }
         .avatar { 
-            width: 160px; height: 160px; 
+            width: 140px; height: 140px; 
             border-radius: 50%; 
-            border: 4px solid var(--accent-purple); 
-            margin-bottom: 20px;
-            object-fit: cover;
-            box-shadow: 0 0 35px rgba(124, 92, 252, 0.5);
+            border: 3px solid var(--accent-purple); 
+            margin-bottom: 15px;
+            box-shadow: 0 0 25px rgba(124, 92, 252, 0.4);
         }
-        .username { font-size: 2.5rem; font-weight: 700; margin: 0; letter-spacing: -1px; }
-        .subtitle { color: #8a8a9d; font-size: 1rem; margin-top: 5px; }
-
-        .socials { display: flex; gap: 12px; margin-top: 25px; justify-content: center; }
-        .btn {
-            text-decoration: none;
-            color: white;
-            padding: 12px 20px;
-            border-radius: 8px;
-            font-size: 0.9rem;
-            font-weight: 600;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            transition: all 0.3s ease;
-            backdrop-filter: blur(5px);
-        }
-        .btn-discord { background-color: var(--discord-blue); }
-        .btn-telegram { background-color: var(--telegram-blue); }
-        .btn:hover { opacity: 0.9; transform: translateY(-2px); }
-
-        .section-title { 
-            font-size: 0.9rem; 
-            font-weight: 700; 
-            color: #5a5a75; 
-            text-transform: uppercase; 
-            letter-spacing: 2px;
-            margin: 50px 0 25px 0;
+        .username { font-size: 2.2rem; font-weight: 700; margin: 0; }
+        
+        /* GRIGLIA STILE FOTO */
+        .section-title {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 30px;
+            color: #e0e0ff;
+            text-shadow: 0 0 10px rgba(124, 92, 252, 0.5);
         }
 
         .grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 20px;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
             width: 100%;
-            max-width: 1100px;
-            flex-grow: 1;
+            max-width: 1000px;
         }
 
+        /* CARD CON EFFETTO RGB */
         .card {
-            background-color: var(--card-bg);
+            background: var(--card-bg);
             border: 1px solid var(--border-color);
-            border-radius: 12px;
-            padding: 25px 20px;
+            border-radius: 8px;
+            padding: 15px;
             display: flex;
             align-items: center;
             position: relative;
-            transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            backdrop-filter: blur(10px);
+            transition: 0.3s ease;
+            overflow: hidden;
         }
-        .card:hover { border-color: var(--accent-purple); transform: scale(1.03); background: rgba(26, 26, 46, 0.9); }
 
-        .server-logo { width: 54px; height: 54px; border-radius: 10px; margin-right: 15px; object-fit: cover; }
+        /* Animazione RGB al passaggio */
+        .card:hover {
+            transform: translateY(-3px);
+            border-color: transparent;
+            box-shadow: 0 0 15px rgba(124, 92, 252, 0.2);
+        }
+
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            border-radius: 8px;
+            padding: 2px; 
+            background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+            background-size: 400%;
+            z-index: -1;
+            animation: rgb-glow 20s linear infinite;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .card:hover::before { opacity: 1; }
+
+        @keyframes rgb-glow {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* ELEMENTI CARD */
+        .server-icon {
+            width: 50px;
+            height: 50px;
+            border-radius: 8px;
+            margin-right: 15px;
+            object-fit: cover;
+            background: #1e1e2e;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 1.2rem;
+            color: #7c5cfc;
+        }
 
         .info { flex-grow: 1; }
-        .info h3 { margin: 0; font-size: 1.1rem; display: flex; align-items: center; gap: 8px; }
-        .info p { margin: 2px 0; font-size: 0.8rem; color: #5a5a75; }
+        .info h4 { margin: 0; font-size: 1rem; display: flex; justify-content: space-between; align-items: center; }
+        .info p { margin: 2px 0; font-size: 0.75rem; color: #5a5a75; }
 
+        .status-dot { font-size: 0.65rem; color: var(--status-offline); font-weight: 400; }
+        .status-dot.online { color: var(--status-online); }
+
+        /* RUOLI */
         .tag {
             display: inline-block;
-            margin-top: 10px;
-            padding: 4px 12px;
-            border-radius: 6px;
-            font-size: 0.7rem;
-            font-weight: 800;
+            margin-top: 8px;
+            padding: 3px 10px;
+            border-radius: 4px;
+            font-size: 0.65rem;
+            font-weight: 700;
             text-transform: uppercase;
+            color: white;
         }
-        .helper { background-color: #3742fa; color: white; }
-        .helper-plus { background-color: #2ed573; color: white; }
-        .mod { background-color: var(--mod-blue); color: white; }
-        .sr-mod { background-color: var(--srmod-blue); color: white; }
-        .owner { background-color: var(--owner-red); color: white; }
-        .collaboratore { background-color: var(--collaboratore-brown); color: white; }
+        .tag.mod { background: #00bcd4; }
+        .tag.srmod { background: #0984e3; }
+        .tag.admin { background: #d63031; }
+        .tag.owner { background: #e84393; }
+        .tag.helper { background: #2ed573; }
+        .tag.collab { background: #8B4513; }
 
-        .status { font-size: 0.7rem; font-weight: 700; }
-        .status-closed { color: var(--status-red); }
-        .status-past { color: var(--status-gray); }
-        .status-online { color: var(--status-green); }
-
+        /* FOOTER */
         footer {
-            margin-top: 80px;
-            padding: 30px;
+            margin-top: 60px;
+            color: #4a4a61;
+            font-size: 0.8rem;
             text-align: center;
-            color: var(--footer-text);
-            font-size: 0.85rem;
-            letter-spacing: 0.5px;
-            border-top: 1px solid var(--border-color);
+            border-top: 1px solid #1e1e2e;
+            padding-top: 20px;
             width: 100%;
-            max-width: 1100px;
-            position: relative;
+            max-width: 1000px;
         }
+
+        /* SCIA CURSORE */
+        .trail {
+            position: fixed;
+            width: 6px; height: 6px;
+            background: var(--accent-purple);
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 9999;
+            box-shadow: 0 0 8px var(--accent-purple);
+        }
+
+        @media (max-width: 900px) { .grid { grid-template-columns: repeat(2, 1fr); } }
+        @media (max-width: 600px) { .grid { grid-template-columns: 1fr; } }
     </style>
 </head>
 <body>
@@ -188,95 +195,90 @@
     <div class="profile-header">
         <img src="avatar.png" class="avatar" alt="Avatar">
         <h1 class="username">Antonioilking</h1>
-        <p class="subtitle">Minecraft Staffer • Esperienze & Management</p>
-
-        <div class="socials">
-            <a href="https://discord.com" class="btn btn-discord"><i class="fab fa-discord"></i> Discord: antonioilkingog</a>
-            <a href="https://t.me/antonioilking" class="btn btn-telegram"><i class="fab fa-telegram"></i> Telegram: @antonioilking</a>
-        </div>
+        <p style="color: #8a8a9d;">Minecraft Staffer • Esperienze & Management</p>
     </div>
 
-    <h2 class="section-title">Esperienze Staff</h2>
+    <h2 class="section-title">Minecraft Experience</h2>
 
     <div class="grid">
         <div class="card">
-            <img src="minecraft.png" class="server-logo" alt="Minecraft Italia Logo">
+            <img src="minecraft.png" class="server-icon" alt="M">
             <div class="info">
-                <h3>Minecraft Italia <span class="status status-past">• Passato</span></h3>
+                <h4>Minecraft Italia <span class="status-dot">• Offline</span></h4>
                 <p>—</p>
-                <span class="tag collaboratore">Collaboratore</span>
+                <span class="tag collab">Collaboratore</span>
             </div>
         </div>
 
         <div class="card">
-            <img src="lyzard.png" class="server-logo" alt="Lyzard Logo">
+            <img src="lyzard.png" class="server-icon" alt="L">
             <div class="info">
-                <h3>Lyzard <span class="status status-closed">• Chiuso</span></h3>
+                <h4>Lyzard <span class="status-dot">• Offline</span></h4>
                 <p>—</p>
-                <span class="tag sr-mod">Sr.Mod</span>
+                <span class="tag srmod">Sr.Mod</span>
             </div>
         </div>
 
         <div class="card">
-            <img src="atlas.png" class="server-logo" alt="AtlasMC Logo">
+            <div class="server-icon" style="background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%); color: white;">A</div>
             <div class="info">
-                <h3>AtlasMC <span class="status status-closed">• Chiuso</span></h3>
+                <h4>AtlasMC <span class="status-dot">• Offline</span></h4>
                 <p>—</p>
                 <span class="tag helper">Helper</span>
             </div>
         </div>
 
         <div class="card">
-            <img src="nupped.png" class="server-logo" alt="Nupped Logo">
+            <div class="server-icon" style="background: #222;">N</div>
             <div class="info">
-                <h3>Nupped <span class="status status-closed">• Chiuso</span></h3>
+                <h4>Nupped <span class="status-dot">• Offline</span></h4>
                 <p>—</p>
                 <span class="tag owner">Owner</span>
             </div>
         </div>
 
         <div class="card">
-            <img src="celestymc.png" class="server-logo" alt="CelestyMC Logo">
+            <img src="celestymc.png" class="server-icon" alt="C">
             <div class="info">
-                <h3>CelestyMC <span class="status status-closed">• Chiuso</span></h3>
+                <h4>CelestyMC <span class="status-dot">• Offline</span></h4>
                 <p>—</p>
-                <span class="tag mod">Moderatore</span>
+                <span class="tag mod">Mod</span>
             </div>
         </div>
 
         <div class="card">
-            <img src="metamc.png" class="server-logo" alt="MetaMC Logo">
+            <div class="server-icon" style="background: white; color: #333;">M</div>
             <div class="info">
-                <h3>Nexuscraft (MetaMC) <span class="status status-past">• Passato</span></h3>
+                <h4>Nexuscraft <span class="status-dot">• Offline</span></h4>
                 <p>metamc.it</p>
-                <span class="tag helper-plus">Helper+</span>
+                <span class="tag helper">Helper+</span>
             </div>
         </div>
 
         <div class="card">
-            <img src="sottosopra.png" class="server-logo" alt="Sottosopra Logo">
+            <div class="server-icon" style="background: #e67e22;">S</div>
             <div class="info">
-                <h3>Sottosopravvivenza <span class="status status-past">• Passato</span></h3>
+                <h4>Sottosopra <span class="status-dot">• Offline</span></h4>
                 <p>mc.sottosopravvivenza.it</p>
                 <span class="tag helper">Helper</span>
             </div>
         </div>
 
         <div class="card">
-            <img src="efestia.png" class="server-logo" alt="Efestia Logo">
+            <div class="server-icon" style="background: #d35400;">E</div>
             <div class="info">
-                <h3>Efestia <span class="status status-closed">• Chiuso</span></h3>
+                <h4>Efestia <span class="status-dot">• Offline</span></h4>
                 <p>mc.efestiamc.it</p>
                 <span class="tag helper">Helper</span>
             </div>
         </div>
 
         <div class="card">
-            <img src="titanet.png" class="server-logo" alt="Titanet Logo">
+            <img src="titanet.png" class="server-icon" alt="T">
             <div class="info">
-                <h3>Titanet <span class="status status-online">• Online</span></h3>
+                <h4>Titanet <span class="status-dot online">• Online</span></h4>
                 <p>—</p>
-                <span class="tag sr-mod">Sr.Mod</span>
+                <span class="tag srmod">Sr.Mod</span>
             </div>
         </div>
     </div>
@@ -286,41 +288,31 @@
     </footer>
 
     <script>
-        // 1. Sfondo Animato
+        // Sfondo Particelle
         const bg = document.getElementById('bg');
-        for (let i = 0; i < 30; i++) {
-            const particle = document.createElement('div');
-            particle.className = 'particle';
-            const size = Math.random() * 5 + 2 + 'px';
-            particle.style.width = size;
-            particle.style.height = size;
-            particle.style.left = Math.random() * 100 + 'vw';
-            particle.style.top = Math.random() * 100 + 'vh';
-            particle.style.animationDuration = Math.random() * 10 + 10 + 's';
-            particle.style.animationDelay = Math.random() * 5 + 's';
-            bg.appendChild(particle);
+        for (let i = 0; i < 25; i++) {
+            const p = document.createElement('div');
+            p.className = 'particle';
+            const size = Math.random() * 4 + 2 + 'px';
+            p.style.width = size; p.style.height = size;
+            p.style.left = Math.random() * 100 + 'vw';
+            p.style.animationDuration = Math.random() * 10 + 10 + 's';
+            p.style.animationDelay = Math.random() * 5 + 's';
+            bg.appendChild(p);
         }
 
-        // 2. Scia del Cursore
+        // Scia Cursore
         document.addEventListener('mousemove', (e) => {
             const trail = document.createElement('div');
             trail.className = 'trail';
             trail.style.left = e.clientX + 'px';
             trail.style.top = e.clientY + 'px';
-            
             document.body.appendChild(trail);
-
-            // Effetto scomparsa
             setTimeout(() => {
                 trail.style.opacity = '0';
-                trail.style.width = '0px';
-                trail.style.height = '0px';
+                trail.style.transform = 'scale(0)';
             }, 50);
-
-            // Rimuovi dal DOM dopo l'animazione
-            setTimeout(() => {
-                trail.remove();
-            }, 800);
+            setTimeout(() => trail.remove(), 600);
         });
     </script>
 </body>

@@ -16,7 +16,9 @@
             --discord-blue: #5865F2;
             --telegram-blue: #0088cc;
             --status-red: #ff4757;
+            --status-gray: #5a5a75;
             --mod-blue: #00a8ff;
+            --srmod-blue: #0984e3;
             --owner-red: #ff4757;
         }
 
@@ -31,6 +33,7 @@
             padding: 60px 20px;
         }
 
+        /* Header & Profile */
         .profile-header { text-align: center; margin-bottom: 40px; }
         .avatar { 
             width: 160px; height: 160px; 
@@ -43,6 +46,7 @@
         .username { font-size: 2.5rem; font-weight: 700; margin: 0; letter-spacing: -1px; }
         .subtitle { color: #8a8a9d; font-size: 1rem; margin-top: 5px; }
 
+        /* Social Buttons */
         .socials { display: flex; gap: 12px; margin-top: 25px; justify-content: center; }
         .btn {
             text-decoration: none;
@@ -58,7 +62,9 @@
         }
         .btn-discord { background-color: var(--discord-blue); }
         .btn-telegram { background-color: var(--telegram-blue); }
+        .btn:hover { opacity: 0.9; transform: translateY(-2px); }
 
+        /* Section Layout */
         .section-title { 
             font-size: 0.9rem; 
             font-weight: 700; 
@@ -76,6 +82,7 @@
             max-width: 1100px;
         }
 
+        /* Experience Cards */
         .card {
             background-color: var(--card-bg);
             border: 1px solid var(--border-color);
@@ -86,14 +93,19 @@
             position: relative;
             transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
-        .card:hover { border-color: var(--accent-purple); transform: scale(1.03); background: #1a1a2e; }
+        .card:hover { 
+            border-color: var(--accent-purple); 
+            transform: scale(1.03); 
+            background: #1a1a2e; 
+        }
 
         .server-logo { width: 54px; height: 54px; border-radius: 10px; margin-right: 15px; object-fit: contain; }
 
         .info { flex-grow: 1; }
-        .info h3 { margin: 0; font-size: 1.1rem; display: flex; align-items: center; }
+        .info h3 { margin: 0; font-size: 1.1rem; display: flex; align-items: center; gap: 8px; }
         .info p { margin: 2px 0; font-size: 0.8rem; color: #5a5a75; }
 
+        /* Tags & Badges */
         .tag {
             display: inline-block;
             margin-top: 10px;
@@ -106,15 +118,16 @@
         .helper-plus { background-color: #2ed573; color: white; }
         .helper { background-color: #3742fa; color: white; }
         .mod { background-color: var(--mod-blue); color: white; }
+        .sr-mod { background-color: var(--srmod-blue); color: white; }
         .owner { background-color: var(--owner-red); color: white; }
 
         .status { 
             font-size: 0.7rem; 
-            color: var(--status-red);
             font-weight: 700;
-            margin-left: 10px;
             white-space: nowrap;
         }
+        .status-closed { color: var(--status-red); }
+        .status-past { color: var(--status-gray); }
     </style>
 </head>
 <body>
@@ -134,9 +147,18 @@
 
     <div class="grid">
         <div class="card">
+            <img src="lyzard.png" class="server-logo" alt="Lyzard Logo">
+            <div class="info">
+                <h3>Lyzard <span class="status status-closed">• Chiuso</span></h3>
+                <p>—</p>
+                <span class="tag sr-mod">Sr.Mod</span>
+            </div>
+        </div>
+
+        <div class="card">
             <img src="atlas.png" class="server-logo" alt="AtlasMC Logo">
             <div class="info">
-                <h3>AtlasMC <span class="status">• Chiuso</span></h3>
+                <h3>AtlasMC <span class="status status-closed">• Chiuso</span></h3>
                 <p>—</p>
                 <span class="tag helper">Helper</span>
             </div>
@@ -145,7 +167,7 @@
         <div class="card">
             <img src="nupped.png" class="server-logo" alt="Nupped Logo">
             <div class="info">
-                <h3>Nupped <span class="status">• Chiuso</span></h3>
+                <h3>Nupped <span class="status status-closed">• Chiuso</span></h3>
                 <p>—</p>
                 <span class="tag owner">Owner</span>
             </div>
@@ -154,7 +176,7 @@
         <div class="card">
             <img src="celesty.png" class="server-logo" alt="Celesty Logo">
             <div class="info">
-                <h3>CelestyMC <span class="status">• Chiuso</span></h3>
+                <h3>CelestyMC <span class="status status-closed">• Chiuso</span></h3>
                 <p>—</p>
                 <span class="tag mod">Moderatore</span>
             </div>
@@ -163,7 +185,7 @@
         <div class="card">
             <img src="metamc.png" class="server-logo" alt="MetaMC Logo">
             <div class="info">
-                <h3>Nexuscraft (MetaMC) <span class="status">• Passato</span></h3>
+                <h3>Nexuscraft (MetaMC) <span class="status status-past">• Passato</span></h3>
                 <p>metamc.it</p>
                 <span class="tag helper-plus">Helper+</span>
             </div>
@@ -172,7 +194,7 @@
         <div class="card">
             <img src="sottosopra.png" class="server-logo" alt="Sottosopra Logo">
             <div class="info">
-                <h3>Sottosopravvivenza <span class="status">• Passato</span></h3>
+                <h3>Sottosopravvivenza <span class="status status-past">• Passato</span></h3>
                 <p>mc.sottosopravvivenza.it</p>
                 <span class="tag helper">Helper</span>
             </div>
@@ -181,7 +203,7 @@
         <div class="card">
             <img src="efestia.png" class="server-logo" alt="Efestia Logo">
             <div class="info">
-                <h3>Efestia <span class="status">• Chiuso</span></h3>
+                <h3>Efestia <span class="status status-closed">• Chiuso</span></h3>
                 <p>mc.efestiamc.it</p>
                 <span class="tag helper">Helper</span>
             </div>

@@ -16,14 +16,15 @@
             --discord-blue: #5865F2;
             --telegram-blue: #0088cc;
             --twitch-purple: #9146FF;
-            --status-red: #ff4757;
-            --status-gray: #5a5a75;
-            --status-green: #2ed573;
-            --mod-blue: #00a8ff;
-            --srmod-blue: #0984e3;
-            --owner-red: #ff4757;
-            --collaboratore-brown: #8B4513;
             --footer-text: #4a4a61;
+
+            /* Nuova Tavolozza Colori Ruoli */
+            --color-owner: #ff4757;        /* Rosso */
+            --color-helper: #2ed573;       /* Verde chiaro */
+            --color-helper-plus: #218c74;  /* Verde scuro */
+            --color-mod: #00a8ff;          /* Blu chiaro */
+            --color-srmod: #0984e3;        /* Blu scuro */
+            --color-collab: #8B4513;       /* Marrone */
         }
 
         body {
@@ -50,7 +51,6 @@
             overflow: hidden;
             pointer-events: none;
         }
-
         .particle {
             position: absolute;
             background: rgba(124, 92, 252, 0.3);
@@ -58,7 +58,6 @@
             filter: blur(2px);
             animation: float 20s infinite linear;
         }
-
         @keyframes float {
             0% { transform: translateY(0) translateX(0); opacity: 0; }
             50% { opacity: 0.6; }
@@ -68,8 +67,7 @@
         /* SCIA DEL CURSORE */
         .trail {
             position: fixed;
-            width: 8px;
-            height: 8px;
+            width: 8px; height: 8px;
             background: var(--accent-purple);
             border-radius: 50%;
             pointer-events: none;
@@ -79,7 +77,7 @@
             box-shadow: 0 0 10px var(--accent-purple);
         }
 
-        /* Contenuti */
+        /* HEADER */
         .profile-header { text-align: center; margin-bottom: 40px; position: relative; }
         .avatar { 
             width: 160px; height: 160px; 
@@ -92,13 +90,7 @@
         .username { font-size: 2.5rem; font-weight: 700; margin: 0; letter-spacing: -1px; }
         .subtitle { color: #8a8a9d; font-size: 1rem; margin-top: 5px; }
 
-        .socials { 
-            display: flex; 
-            flex-wrap: wrap;
-            gap: 12px; 
-            margin-top: 25px; 
-            justify-content: center; 
-        }
+        .socials { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 25px; justify-content: center; }
         .btn {
             text-decoration: none;
             color: white;
@@ -118,21 +110,17 @@
         .btn:hover { opacity: 0.9; transform: translateY(-2px); }
 
         .section-title { 
-            font-size: 0.9rem; 
-            font-weight: 700; 
-            color: #5a5a75; 
-            text-transform: uppercase; 
-            letter-spacing: 2px;
-            margin: 50px 0 25px 0;
+            font-size: 0.9rem; font-weight: 700; color: #5a5a75; text-transform: uppercase; 
+            letter-spacing: 2px; margin: 50px 0 25px 0;
         }
 
+        /* GRID & CARDS */
         .grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
             gap: 20px;
             width: 100%;
             max-width: 1100px;
-            flex-grow: 1;
         }
 
         .card {
@@ -143,17 +131,16 @@
             display: flex;
             align-items: center;
             position: relative;
-            transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
             backdrop-filter: blur(10px);
         }
-        .card:hover { border-color: var(--accent-purple); transform: scale(1.03); background: rgba(26, 26, 46, 0.9); }
 
         .server-logo { width: 54px; height: 54px; border-radius: 10px; margin-right: 15px; object-fit: cover; }
-
         .info { flex-grow: 1; }
         .info h3 { margin: 0; font-size: 1.1rem; display: flex; align-items: center; gap: 8px; }
-        .info p { margin: 2px 0; font-size: 0.8rem; color: #5a5a75; }
+        .info p { margin: 2px 0; font-size: 0.8rem; color: #8a8a9d; }
 
+        /* TAGS */
         .tag {
             display: inline-block;
             margin-top: 10px;
@@ -162,30 +149,33 @@
             font-size: 0.7rem;
             font-weight: 800;
             text-transform: uppercase;
+            color: white;
         }
-        .helper { background-color: #3742fa; color: white; }
-        .helper-plus { background-color: #2ed573; color: white; }
-        .mod { background-color: var(--mod-blue); color: white; }
-        .sr-mod { background-color: var(--srmod-blue); color: white; }
-        .owner { background-color: var(--owner-red); color: white; }
-        .collaboratore { background-color: var(--collaboratore-brown); color: white; }
+
+        /* EFFETTI GLOW PERSONALIZZATI PER RUOLO */
+        .card-owner:hover { border-color: var(--color-owner); box-shadow: 0 0 20px rgba(255, 71, 87, 0.4); transform: scale(1.03); }
+        .card-srmod:hover { border-color: var(--color-srmod); box-shadow: 0 0 20px rgba(9, 132, 227, 0.4); transform: scale(1.03); }
+        .card-mod:hover { border-color: var(--color-mod); box-shadow: 0 0 20px rgba(0, 168, 255, 0.4); transform: scale(1.03); }
+        .card-helper:hover { border-color: var(--color-helper); box-shadow: 0 0 20px rgba(46, 213, 115, 0.4); transform: scale(1.03); }
+        .card-helper-plus:hover { border-color: var(--color-helper-plus); box-shadow: 0 0 20px rgba(33, 140, 116, 0.4); transform: scale(1.03); }
+        .card-collab:hover { border-color: var(--color-collab); box-shadow: 0 0 20px rgba(139, 69, 19, 0.4); transform: scale(1.03); }
+
+        /* Colorazione Tag */
+        .tag.owner { background-color: var(--color-owner); }
+        .tag.sr-mod { background-color: var(--color-srmod); }
+        .tag.mod { background-color: var(--color-mod); }
+        .tag.helper { background-color: var(--color-helper); }
+        .tag.helper-plus { background-color: var(--color-helper-plus); }
+        .tag.collaboratore { background-color: var(--color-collab); }
 
         .status { font-size: 0.7rem; font-weight: 700; }
-        .status-closed { color: var(--status-red); }
-        .status-past { color: var(--status-gray); }
-        .status-online { color: var(--status-green); }
+        .status-closed { color: #ff4757; }
+        .status-past { color: #5a5a75; }
+        .status-online { color: #2ed573; }
 
         footer {
-            margin-top: 80px;
-            padding: 30px;
-            text-align: center;
-            color: var(--footer-text);
-            font-size: 0.85rem;
-            letter-spacing: 0.5px;
-            border-top: 1px solid var(--border-color);
-            width: 100%;
-            max-width: 1100px;
-            position: relative;
+            margin-top: 80px; padding: 30px; text-align: center; color: var(--footer-text);
+            font-size: 0.85rem; border-top: 1px solid var(--border-color); width: 100%; max-width: 1100px;
         }
     </style>
 </head>
@@ -208,8 +198,8 @@
     <h2 class="section-title">Esperienze Staff</h2>
 
     <div class="grid">
-        <div class="card">
-            <img src="minecraft.png" class="server-logo" alt="Minecraft Italia Logo">
+        <div class="card card-collab">
+            <img src="minecraft.png" class="server-logo" alt="Logo">
             <div class="info">
                 <h3>Minecraft Italia <span class="status status-past">• Passato</span></h3>
                 <p>—</p>
@@ -217,8 +207,8 @@
             </div>
         </div>
 
-        <div class="card">
-            <img src="lyzard.png" class="server-logo" alt="Lyzard Logo">
+        <div class="card card-srmod">
+            <img src="lyzard.png" class="server-logo" alt="Logo">
             <div class="info">
                 <h3>Lyzard <span class="status status-closed">• Chiuso</span></h3>
                 <p>—</p>
@@ -226,8 +216,8 @@
             </div>
         </div>
 
-        <div class="card">
-            <img src="atlas.png" class="server-logo" alt="AtlasMC Logo">
+        <div class="card card-helper">
+            <img src="atlas.png" class="server-logo" alt="Logo">
             <div class="info">
                 <h3>AtlasMC <span class="status status-closed">• Chiuso</span></h3>
                 <p>—</p>
@@ -235,8 +225,8 @@
             </div>
         </div>
 
-        <div class="card">
-            <img src="nupped.png" class="server-logo" alt="Nupped Logo">
+        <div class="card card-owner">
+            <img src="nupped.png" class="server-logo" alt="Logo">
             <div class="info">
                 <h3>Nupped <span class="status status-closed">• Chiuso</span></h3>
                 <p>—</p>
@@ -244,8 +234,8 @@
             </div>
         </div>
 
-        <div class="card">
-            <img src="celestymc.png" class="server-logo" alt="CelestyMC Logo">
+        <div class="card card-mod">
+            <img src="celestymc.png" class="server-logo" alt="Logo">
             <div class="info">
                 <h3>CelestyMC <span class="status status-closed">• Chiuso</span></h3>
                 <p>—</p>
@@ -253,8 +243,8 @@
             </div>
         </div>
 
-        <div class="card">
-            <img src="metamc.png" class="server-logo" alt="MetaMC Logo">
+        <div class="card card-helper-plus">
+            <img src="metamc.png" class="server-logo" alt="Logo">
             <div class="info">
                 <h3>Nexuscraft (MetaMC) <span class="status status-past">• Passato</span></h3>
                 <p>metamc.it</p>
@@ -262,8 +252,8 @@
             </div>
         </div>
 
-        <div class="card">
-            <img src="sottosopra.png" class="server-logo" alt="Sottosopra Logo">
+        <div class="card card-helper">
+            <img src="sottosopra.png" class="server-logo" alt="Logo">
             <div class="info">
                 <h3>Sottosopravvivenza <span class="status status-past">• Passato</span></h3>
                 <p>mc.sottosopravvivenza.it</p>
@@ -271,8 +261,8 @@
             </div>
         </div>
 
-        <div class="card">
-            <img src="efestia.png" class="server-logo" alt="Efestia Logo">
+        <div class="card card-helper">
+            <img src="efestia.png" class="server-logo" alt="Logo">
             <div class="info">
                 <h3>Efestia <span class="status status-closed">• Chiuso</span></h3>
                 <p>mc.efestiamc.it</p>
@@ -280,8 +270,8 @@
             </div>
         </div>
 
-        <div class="card">
-            <img src="titanet.png" class="server-logo" alt="Titanet Logo">
+        <div class="card card-srmod">
+            <img src="titanet.png" class="server-logo" alt="Logo">
             <div class="info">
                 <h3>Titanet <span class="status status-online">• Online</span></h3>
                 <p>—</p>
@@ -295,6 +285,7 @@
     </footer>
 
     <script>
+        // Sfondo Particelle
         const bg = document.getElementById('bg');
         for (let i = 0; i < 30; i++) {
             const particle = document.createElement('div');
@@ -309,6 +300,7 @@
             bg.appendChild(particle);
         }
 
+        // Scia del Cursore
         document.addEventListener('mousemove', (e) => {
             const trail = document.createElement('div');
             trail.className = 'trail';
@@ -320,9 +312,7 @@
                 trail.style.width = '0px';
                 trail.style.height = '0px';
             }, 50);
-            setTimeout(() => {
-                trail.remove();
-            }, 800);
+            setTimeout(() => { trail.remove(); }, 800);
         });
     </script>
 </body>

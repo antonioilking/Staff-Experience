@@ -17,6 +17,7 @@
             --telegram-blue: #0088cc;
             --status-red: #ff4757;
             --status-gray: #5a5a75;
+            --status-green: #2ed573; /* Colore per Online */
             --mod-blue: #00a8ff;
             --srmod-blue: #0984e3;
             --owner-red: #ff4757;
@@ -117,6 +118,7 @@
         .status { font-size: 0.7rem; font-weight: 700; }
         .status-closed { color: var(--status-red); }
         .status-past { color: var(--status-gray); }
+        .status-online { color: var(--status-green); }
     </style>
 </head>
 <body>
@@ -204,6 +206,15 @@
                 <h3>Efestia <span class="status status-closed">• Chiuso</span></h3>
                 <p>mc.efestiamc.it</p>
                 <span class="tag helper">Helper</span>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="titanet.png" class="server-logo" alt="Titanet Logo">
+            <div class="info">
+                <h3>Titanet <span class="status status-online">• Online</span></h3>
+                <p>—</p>
+                <span class="tag sr-mod">Sr.Mod</span>
             </div>
         </div>
     </div>

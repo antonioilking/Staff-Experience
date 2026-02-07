@@ -15,6 +15,7 @@
             --accent-purple: #7c5cfc;
             --discord-blue: #5865F2;
             --telegram-blue: #0088cc;
+            --twitch-purple: #9146FF; /* Colore di Twitch */
             --status-red: #ff4757;
             --status-gray: #5a5a75;
             --status-green: #2ed573;
@@ -91,7 +92,13 @@
         .username { font-size: 2.5rem; font-weight: 700; margin: 0; letter-spacing: -1px; }
         .subtitle { color: #8a8a9d; font-size: 1rem; margin-top: 5px; }
 
-        .socials { display: flex; gap: 12px; margin-top: 25px; justify-content: center; }
+        .socials { 
+            display: flex; 
+            flex-wrap: wrap; /* Permette ai bottoni di andare a capo */
+            gap: 12px; 
+            margin-top: 25px; 
+            justify-content: center; 
+        }
         .btn {
             text-decoration: none;
             color: white;
@@ -107,7 +114,30 @@
         }
         .btn-discord { background-color: var(--discord-blue); }
         .btn-telegram { background-color: var(--telegram-blue); }
+        .btn-twitch { background-color: var(--twitch-purple); } /* Stile per Twitch */
         .btn:hover { opacity: 0.9; transform: translateY(-2px); }
+
+        /* Contatore Visualizzazioni */
+        .viewer-box {
+            margin-top: 25px;
+            padding: 8px 15px;
+            background-color: rgba(21, 21, 34, 0.7);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: #8a8a9d;
+            font-size: 0.9rem;
+        }
+        .viewer-box i {
+            color: var(--accent-purple);
+        }
+        .viewer-count-img {
+            vertical-align: middle;
+            height: 18px; /* Rendi l'immagine del contatore più piccola per integrarsi */
+            width: auto;
+        }
 
         .section-title { 
             font-size: 0.9rem; 
@@ -179,11 +209,6 @@
             max-width: 1100px;
             position: relative;
         }
-        .viewer-count {
-            margin-top: 10px;
-            display: block;
-            opacity: 0.6;
-        }
     </style>
 </head>
 <body>
@@ -196,8 +221,14 @@
         <p class="subtitle">Minecraft Staffer • Esperienze & Management</p>
 
         <div class="socials">
-            <a href="https://discord.com" class="btn btn-discord"><i class="fab fa-discord"></i> Discord: antonioilkingog</a>
-            <a href="https://t.me/antonioilking" class="btn btn-telegram"><i class="fab fa-telegram"></i> Telegram: @antonioilking</a>
+            <a href="https://discord.com/users/antonioilkingog" class="btn btn-discord" target="_blank"><i class="fab fa-discord"></i> Discord: antonioilkingog</a>
+            <a href="https://t.me/antonioilking" class="btn btn-telegram" target="_blank"><i class="fab fa-telegram"></i> Telegram: @antonioilking</a>
+            <a href="https://www.twitch.tv/antonioilkingog_" class="btn btn-twitch" target="_blank"><i class="fab fa-twitch"></i> Twitch: antonioilkingog_</a>
+        </div>
+
+        <div class="viewer-box">
+            <i class="fas fa-eye"></i> 
+            <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fantonioilking.github.io%2Fstaff-experience%2F&count_bg=%237C5CFC&title_bg=%23151522&icon=&icon_color=%23E7E7E7&title=&edge_flat=false" alt="Contatore Visualizzazioni" class="viewer-count-img"/>
         </div>
     </div>
 
@@ -288,9 +319,6 @@
 
     <footer>
         antonioilking staff Experience — Copyright© 2037
-        <span class="viewer-count">
-            <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fantonioilking.github.io&count_bg=%237C5CFC&title_bg=%23252538&icon=&icon_color=%23E7E7E7&title=Visualizzazioni&edge_flat=false" alt="Contatore"/>
-        </span>
     </footer>
 
     <script>
@@ -318,12 +346,14 @@
             
             document.body.appendChild(trail);
 
+            // Effetto scomparsa
             setTimeout(() => {
                 trail.style.opacity = '0';
                 trail.style.width = '0px';
                 trail.style.height = '0px';
             }, 50);
 
+            // Rimuovi dal DOM dopo l'animazione
             setTimeout(() => {
                 trail.remove();
             }, 800);

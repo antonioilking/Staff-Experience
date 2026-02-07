@@ -179,6 +179,11 @@
             max-width: 1100px;
             position: relative;
         }
+        .viewer-count {
+            margin-top: 10px;
+            display: block;
+            opacity: 0.6;
+        }
     </style>
 </head>
 <body>
@@ -283,6 +288,9 @@
 
     <footer>
         antonioilking staff Experience — Copyright© 2037
+        <span class="viewer-count">
+            <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fantonioilking.github.io&count_bg=%237C5CFC&title_bg=%23252538&icon=&icon_color=%23E7E7E7&title=Visualizzazioni&edge_flat=false" alt="Contatore"/>
+        </span>
     </footer>
 
     <script>
@@ -310,14 +318,12 @@
             
             document.body.appendChild(trail);
 
-            // Effetto scomparsa
             setTimeout(() => {
                 trail.style.opacity = '0';
                 trail.style.width = '0px';
                 trail.style.height = '0px';
             }, 50);
 
-            // Rimuovi dal DOM dopo l'animazione
             setTimeout(() => {
                 trail.remove();
             }, 800);
